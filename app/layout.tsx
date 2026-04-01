@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       "Know your deadline. Know your options. Free H-1B grace period calculator.",
     type: "website",
   },
+  other: {
+    "google-adsense-account": "ca-pub-4216024074835971",
+  },
 };
 
 function Navbar() {
