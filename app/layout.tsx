@@ -101,13 +101,11 @@ export default function RootLayout({
             />
           </>
         )}
-        {process.env.NEXT_PUBLIC_ADSENSE_ID && (
-          <Script
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
-            strategy="afterInteractive"
-            crossOrigin="anonymous"
-          />
-        )}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4216024074835971"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
