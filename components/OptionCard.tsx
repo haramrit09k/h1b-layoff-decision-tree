@@ -143,6 +143,35 @@ export default function OptionCard({ result, rank }: OptionCardProps) {
               />
             </svg>
           </a>
+
+          {/* Affiliate links */}
+          {path.affiliateLinks && path.affiliateLinks.length > 0 && (
+            <div className="mt-4 border-t border-gray-100 pt-4">
+              <p className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wide">
+                Helpful resources
+              </p>
+              <ul className="space-y-2">
+                {path.affiliateLinks.map((link, i) => (
+                  <li key={i}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel={`noopener noreferrer${link.sponsored ? " sponsored" : ""}`}
+                      className="text-xs text-blue-600 hover:underline"
+                    >
+                      → {link.label}
+                      {link.sponsored && (
+                        <span className="text-gray-400 ml-1">(ad)</span>
+                      )}
+                    </a>
+                    <p className="text-xs text-gray-400 ml-3 mt-0.5">
+                      {link.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </>
       )}
     </div>

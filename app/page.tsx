@@ -1,4 +1,5 @@
 import CalculatorForm from "@/components/CalculatorForm";
+import AdUnit from "@/components/AdUnit";
 
 export default function HomePage() {
   return (
@@ -60,6 +61,8 @@ export default function HomePage() {
           discretion.
         </p>
       </div>
+
+      <AdUnit slot="home-bottom" className="mt-6" />
     </div>
   );
 }

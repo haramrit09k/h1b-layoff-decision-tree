@@ -16,6 +16,9 @@ import CountdownTimer from "@/components/CountdownTimer";
 import OptionCard from "@/components/OptionCard";
 import ShareButton from "@/components/ShareButton";
 import ProcessingTimesFootnote from "@/components/ProcessingTimesFootnote";
+import AdUnit from "@/components/AdUnit";
+import MoneyMovingCard from "@/components/MoneyMovingCard";
+import { trackEvent } from "@/lib/analytics";
 
 function ResultsContent() {
   const searchParams = useSearchParams();
@@ -117,6 +120,8 @@ function ResultsContent() {
         )}
       </div>
 
+      <AdUnit slot="results-mid" className="my-4" />
+
       {/* Share button row */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-gray-900">
@@ -153,6 +158,8 @@ function ResultsContent() {
       {/* Processing times footnote */}
       <ProcessingTimesFootnote />
 
+      <MoneyMovingCard />
+
       {/* Legal disclaimer */}
       <div className="mt-8 bg-gray-50 border border-gray-100 rounded-xl p-5 text-xs text-gray-500">
         <p className="font-semibold text-gray-700 mb-1">
@@ -188,6 +195,7 @@ function ResultsContent() {
           href="https://ailalawyer.com"
           target="_blank"
           rel="noopener noreferrer sponsored"
+          onClick={() => trackEvent("lawyer_cta_click")}
           className="inline-block bg-white text-blue-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-blue-50 transition-colors"
         >
           Find an immigration attorney →

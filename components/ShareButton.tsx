@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface ShareButtonProps {
   url: string;
@@ -10,6 +11,7 @@ export default function ShareButton({ url }: ShareButtonProps) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
+    trackEvent("share_click");
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);

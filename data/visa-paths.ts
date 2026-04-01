@@ -36,6 +36,12 @@ export interface VisaPath {
   riskLevel: "low" | "medium" | "high";
   riskNote: string;
   uscisUrl: string;
+  affiliateLinks?: {
+    label: string;
+    url: string;
+    description: string;
+    sponsored: boolean;
+  }[];
 }
 
 export const visaPaths: VisaPath[] = [
@@ -250,5 +256,73 @@ export const visaPaths: VisaPath[] = [
       "High bar for qualification — requires documented extraordinary ability. But no lottery, no cap, and no annual renewal limit. Worth exploring for senior engineers, researchers, and founders.",
     uscisUrl:
       "https://www.uscis.gov/working-in-the-united-states/temporary-workers/o-1-visa-individuals-with-extraordinary-ability-or-achievement",
+  },
+  {
+    id: "depart-us",
+    name: "Depart the US",
+    shortName: "Depart US",
+    tagline: "Return home — no US filing needed, preserves future visa eligibility",
+    eligible: () => true,
+    eligibilityNote: () => null,
+    workAuthorized: false,
+    workAuthNote:
+      "No US work authorization after departure. Indian OCI/citizens can work freely in India upon return.",
+    timelineWeeks: [1, 3],
+    premiumAvailable: false,
+    premiumTimelineDays: null,
+    filingDeadline: "before-i94",
+    filingDeadlineNote:
+      "Depart before grace period ends. Voluntary departure preserves your ability to return on future US visas. Even one day of overstay can trigger a 3-year or 10-year reentry bar.",
+    documents: [
+      { name: "Valid home country passport" },
+      {
+        name: "OCI card (Indian citizens)",
+        notes: "Lifelong multiple-entry to India, no visa required — apply if you don't already have one",
+      },
+      { name: "Flight booking confirmation" },
+      {
+        name: "CBP I-94 departure verification",
+        notes: "Check i94.cbp.dhs.gov within 2 weeks of departing to confirm your exit was recorded",
+      },
+    ],
+    fees: {
+      standard: 0,
+      premium: null,
+      label: "No US filing fees",
+    },
+    processingTimeKey: "depart-us",
+    priority: 6,
+    riskLevel: "low",
+    riskNote:
+      "Voluntary departure before grace period ends leaves a clean immigration record. Overstaying — even briefly — can result in 3-year or 10-year bars from re-entering the US.",
+    uscisUrl:
+      "https://www.uscis.gov/working-in-the-united-states/information-for-employers-and-employees/options-for-nonimmigrant-workers-following-termination-of-employment",
+    affiliateLinks: [
+      {
+        label: "Send money to India — Wise",
+        url: "https://wise.com",
+        description: "Real exchange rate, low fees for USD→INR transfers",
+        sponsored: true,
+      },
+      {
+        label: "Open an NRE account — ICICI Bank",
+        url: "https://www.icicibank.com/nri",
+        description: "Tax-free in India, fully repatriable, ~7% FD interest",
+        sponsored: true,
+      },
+      {
+        label: "Apply for OCI card (Indian citizens)",
+        url: "https://www.mha.gov.in/en/divisionofmha/foreigners-division/oci-card",
+        description:
+          "Lifelong multiple-entry to India. Essential for Indian-origin US residents.",
+        sponsored: false,
+      },
+      {
+        label: "Remitly — fast India transfers",
+        url: "https://www.remitly.com",
+        description: "Guaranteed exchange rates, transfers arrive in minutes",
+        sponsored: true,
+      },
+    ],
   },
 ];

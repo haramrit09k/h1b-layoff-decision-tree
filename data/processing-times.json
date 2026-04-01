@@ -36,6 +36,13 @@
       "premium": "15 business days",
       "premiumFee": 2965,
       "notes": "Requires extensive documentation of extraordinary ability"
+    },
+    "depart-us": {
+      "label": "Voluntary Departure",
+      "standard": "Immediate (book a flight)",
+      "premium": "Not applicable",
+      "premiumFee": null,
+      "notes": "No USCIS processing needed. Depart before grace period ends."
     }
   }
 }

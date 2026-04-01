@@ -4,6 +4,7 @@ import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { UserInputs } from "@/data/visa-paths";
 import { buildResultsUrl } from "@/lib/url-state";
+import { trackEvent } from "@/lib/analytics";
 
 const today = new Date().toISOString().split("T")[0];
 
@@ -35,6 +36,7 @@ export default function CalculatorForm() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!validate()) return;
+    trackEvent("form_submit");
     const url = buildResultsUrl(inputs);
     router.push(url);
   }
