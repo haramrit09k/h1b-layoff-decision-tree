@@ -185,7 +185,7 @@ function ResultsContent() {
           complex. A 30-minute consultation can clarify your specific situation.
         </p>
         <a
-          href="https://www.ailawyer.pro"
+          href="https://ailalawyer.com"
           target="_blank"
           rel="noopener noreferrer sponsored"
           className="inline-block bg-white text-blue-700 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-blue-50 transition-colors"
