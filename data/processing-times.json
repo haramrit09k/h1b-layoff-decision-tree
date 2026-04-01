@@ -1,0 +1,41 @@
+{
+  "lastUpdated": "2026-03-01",
+  "source": "https://egov.uscis.gov/processing-times/",
+  "forms": {
+    "I-129-H1B": {
+      "label": "Form I-129 (H-1B Transfer)",
+      "standard": "3–6 months",
+      "premium": "15 business days",
+      "premiumFee": 2805,
+      "notes": "Work authorization begins on receipt notice filing date"
+    },
+    "I-539-H4": {
+      "label": "Form I-539 (H-4 COS)",
+      "standard": "2–4 months",
+      "premium": "Not available",
+      "premiumFee": null,
+      "notes": "No work authorization while pending unless EAD separately approved"
+    },
+    "I-539-B2": {
+      "label": "Form I-539 (B-1/B-2 COS)",
+      "standard": "5–8 months",
+      "premium": "Not available",
+      "premiumFee": null,
+      "notes": "Unpredictable; may be granted fewer than 6 months"
+    },
+    "I-539-F1": {
+      "label": "Form I-539 (F-1 COS)",
+      "standard": "8–13 months",
+      "premium": "Not available",
+      "premiumFee": null,
+      "notes": "Must file within grace period; status maintained while pending"
+    },
+    "I-129-O1": {
+      "label": "Form I-129 (O-1 Visa)",
+      "standard": "3–6 months",
+      "premium": "15 business days",
+      "premiumFee": 2965,
+      "notes": "Requires extensive documentation of extraordinary ability"
+    }
+  }
+}
