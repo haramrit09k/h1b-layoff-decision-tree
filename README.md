@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# H-1B Layoff Navigator
 
-## Getting Started
+A free tool for H-1B workers who've just been laid off. Enter your layoff date and a
+few details about your situation, and get:
 
-First, run the development server:
+- Your exact grace-period deadline (the shorter of 60 days from your last day of
+  employment, or your I-94 expiry)
+- A ranked list of visa options you qualify for (H-1B transfer, H-4, B-1/B-2, F-1,
+  O-1, or voluntary departure), each with typical timelines, fees, and risk level
+- A document checklist for whichever path you choose
+- Current USCIS processing times, kept up to date automatically
+
+This is not legal advice — it's a starting point to help you move fast during a
+stressful 60-day window.
+
+## How it works
+
+The app is a static Next.js site (`output: "export"`) with no backend or database.
+All eligibility logic runs client-side:
+
+- `data/visa-paths.ts` defines each visa path: eligibility rules, work-authorization
+  notes, filing deadlines, required documents, fees, and risk level.
+- `lib/calculator.ts` takes the user's inputs (layoff date, I-94 expiry, spouse
+  visa status, I-140 status, school acceptance) and computes the grace-period
+  deadline and which paths apply.
+- `data/processing-times.json` holds USCIS processing-time estimates per form,
+  refreshed by `scripts/update-processing-times.mjs`.
+- `components/` holds the form, results cards, countdown timer, and document
+  checklist UI.
+
+Pages: `/` (the input form), `/results` (computed options), `/about`.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Build the static export |
+| `npm start` | Serve the production build |
+| `npm run lint` | Run ESLint |
+| `node scripts/update-processing-times.mjs` | Refresh USCIS processing-time estimates in `data/processing-times.json` |
 
-## Learn More
+A GitHub Actions workflow (`.github/workflows`) runs the processing-times script on
+a schedule so the estimates stay current without manual upkeep.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js](https://nextjs.org) (App Router, static export)
+- React 19 + TypeScript
+- Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Disclaimer
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This tool provides general information based on publicly available USCIS
+guidance and is not a substitute for advice from a licensed immigration
+attorney. Immigration rules change and individual circumstances vary — verify
+your specific situation with a qualified professional before making decisions.
