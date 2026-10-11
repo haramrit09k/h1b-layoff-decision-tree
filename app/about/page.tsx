@@ -96,7 +96,7 @@ export default function AboutPage() {
               is the scenario where it could matter.
             </li>
             <li>
-              <strong>Employer layoffs under scrutiny.</strong> A September 18,
+              <strong>Employer layoffs under scrutiny.</strong>{" "} A September 18,
               2026 executive order directs agencies to consider an H-1B
               sponsor&apos;s recent layoffs when reviewing labor condition
               applications, petitions, and visas. It does not change your
@@ -111,7 +111,7 @@ export default function AboutPage() {
               on paper or $420 online, with biometrics included.
             </li>
             <li>
-              <strong>H-4 EAD no longer auto-extends.</strong> For renewals
+              <strong>H-4 EAD no longer auto-extends.</strong>{" "} For renewals
               filed on or after October 30, 2025, work authorization ends on
               the card&apos;s expiration date even while a renewal is pending.
             </li>
