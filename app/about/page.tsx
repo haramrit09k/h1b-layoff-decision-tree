@@ -61,13 +61,65 @@ export default function AboutPage() {
             </li>
             <li>
               <strong>The grace period is discretionary.</strong> USCIS can
-              shorten or deny the grace period. Recent enforcement actions have
-              affected holders within the grace period. This tool&apos;s
+              shorten or deny the grace period. H-1B oversight has tightened
+              (see &quot;Recent developments&quot; below). This tool&apos;s
               calculations are based on published rules, not guarantees.
             </li>
             <li>
               <strong>Always consult an attorney</strong> before making
               decisions about your immigration status.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-base font-bold text-gray-900 mb-2">
+            Recent developments
+          </h2>
+          <p className="text-xs text-gray-500 mb-2">
+            Last reviewed October 11, 2026. Based on law-firm and news
+            summaries of USCIS and White House actions; confirm details on
+            USCIS.gov.
+          </p>
+          <ul className="space-y-2 ml-4 list-disc">
+            <li>
+              <strong>$100,000 H-1B payment — extended, but court-blocked.</strong>{" "}
+              A September 18, 2026 proclamation extended the payment on H-1B
+              petitions for workers entering from abroad through September 21,
+              2027. USCIS has said it does not apply to people already in the
+              U.S. who transfer employers or change status, which covers the
+              transfer and change-of-status paths shown here. A federal court
+              vacated the implementing guidance on June 8, 2026, and the First
+              Circuit denied a stay on July 24, 2026, so it is not currently
+              being collected — but an appeal could reinstate it. If you leave
+              the U.S. and a new employer petitions for you from abroad, this
+              is the scenario where it could matter.
+            </li>
+            <li>
+              <strong>Employer layoffs under scrutiny.</strong> A September 18,
+              2026 executive order directs agencies to consider an H-1B
+              sponsor&apos;s recent layoffs when reviewing labor condition
+              applications, petitions, and visas. It does not change your
+              eligibility to transfer, but ask a prospective employer about
+              their own layoff history and expect more questions.
+            </li>
+            <li>
+              <strong>Higher fees.</strong> Premium processing rose on March 1,
+              2026 (H-1B and O-1 I-129: $2,965; F-1 change of status I-539:
+              $2,075). Base fees since April 2024: I-129 $780 plus a $600
+              Asylum Program Fee (both paid by the employer), and I-539 $470
+              on paper or $420 online, with biometrics included.
+            </li>
+            <li>
+              <strong>H-4 EAD no longer auto-extends.</strong> For renewals
+              filed on or after October 30, 2025, work authorization ends on
+              the card&apos;s expiration date even while a renewal is pending.
+            </li>
+            <li>
+              <strong>B-2 &quot;bridge&quot; filings get a closer look.</strong>{" "}
+              Practitioners report more scrutiny of B-2 change-of-status
+              requests filed to buy time before an H-1B petition. The 60-day
+              grace period rule itself has not changed.
             </li>
           </ul>
         </div>
