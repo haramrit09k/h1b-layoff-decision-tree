@@ -60,7 +60,7 @@ export const visaPaths: VisaPath[] = [
     premiumTimelineDays: 15,
     filingDeadline: "within-grace-period",
     filingDeadlineNote:
-      "New employer must file I-129 before your grace period ends. You can start working immediately upon filing.",
+      "New employer must file I-129 before your grace period ends. You can start working immediately upon filing. The $100,000 H-1B payment does not apply to in-country transfers of people already holding H-1B status.",
     documents: [
       { name: "Form I-129 (filed by new employer)" },
       { name: "Certified Labor Condition Application (LCA) from DOL", notes: "New employer files this first; takes 7 business days" },
@@ -74,15 +74,16 @@ export const visaPaths: VisaPath[] = [
       { name: "Pay stubs from previous employer (last 3 months)" },
     ],
     fees: {
-      standard: 460,
-      premium: 2805,
-      label: "Base filing fee ~$460 + optional premium processing $2,805",
+      standard: 780,
+      premium: 2965,
+      label:
+        "Employer-paid: I-129 fee $780 + $600 Asylum Program Fee ($300 small employers) + optional premium processing $2,965. ACWIA/fraud fees may also apply.",
     },
     processingTimeKey: "I-129-H1B",
     priority: 1,
     riskLevel: "low",
     riskNote:
-      "Lowest risk path. Work authorization maintained from receipt date. Most H-1B holders pursue this as the primary option.",
+      "Lowest risk path. Work authorization maintained from receipt date. Most H-1B holders pursue this as the primary option. Note: a September 2026 executive order directs agencies to weigh an employer's recent layoffs when reviewing H-1B filings, so ask prospective employers about their own history.",
     uscisUrl:
       "https://www.uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations-dod-cooperative-research-and-development-project-workers-and-fashion-models",
   },
@@ -98,7 +99,7 @@ export const visaPaths: VisaPath[] = [
         : "Requires a spouse (or parent, if under 21) who holds valid H-1B status.",
     workAuthorized: false,
     workAuthNote:
-      "No work authorization in H-4 status unless you separately apply for and receive an H-4 EAD — only available if your spouse has an approved I-140.",
+      "No work authorization in H-4 status unless you separately apply for and receive an H-4 EAD — only available if your spouse has an approved I-140 (or H-1B status extended beyond six years under AC21). Automatic extension of expiring EADs ended for renewals filed on or after Oct 30, 2025, so file any renewal well before your card expires.",
     timelineWeeks: [8, 16],
     premiumAvailable: false,
     premiumTimelineDays: null,
@@ -120,9 +121,9 @@ export const visaPaths: VisaPath[] = [
       },
     ],
     fees: {
-      standard: 370,
+      standard: 470,
       premium: null,
-      label: "Filing fee $370 + $85 biometrics",
+      label: "I-539 filing fee $470 paper / $420 online (biometrics included)",
     },
     processingTimeKey: "I-539-H4",
     priority: 2,
@@ -158,15 +159,15 @@ export const visaPaths: VisaPath[] = [
       { name: "Statement of intent to depart U.S. before authorized stay expires" },
     ],
     fees: {
-      standard: 370,
+      standard: 470,
       premium: null,
-      label: "Filing fee $370 + $85 biometrics",
+      label: "I-539 filing fee $470 paper / $420 online (biometrics included)",
     },
     processingTimeKey: "I-539-B2",
     priority: 3,
     riskLevel: "medium",
     riskNote:
-      "Approval not guaranteed and processing is slow (5–8 months). Best used as a last resort to buy time while other arrangements are made.",
+      "Approval not guaranteed and processing is slow (5–8 months). Practitioners report USCIS is scrutinizing B-2 'bridge' filings more closely, especially when a new H-1B petition follows, so the stated visitor purpose must be genuine. Best used as a last resort to buy time while other arrangements are made.",
     uscisUrl:
       "https://www.uscis.gov/visit-the-united-states/extend-your-stay/extend-your-stay",
   },
@@ -184,8 +185,8 @@ export const visaPaths: VisaPath[] = [
     workAuthNote:
       "Limited on-campus work only (20 hrs/week). CPT or OPT work authorization requires additional separate applications after enrollment.",
     timelineWeeks: [32, 52],
-    premiumAvailable: false,
-    premiumTimelineDays: null,
+    premiumAvailable: true,
+    premiumTimelineDays: 30,
     filingDeadline: "within-grace-period",
     filingDeadlineNote:
       "Must file Form I-539 before grace period ends. Processing can take 8–13 months — you must maintain your current status until approved.",
@@ -200,9 +201,10 @@ export const visaPaths: VisaPath[] = [
       { name: "Cover letter explaining reason for status change" },
     ],
     fees: {
-      standard: 370,
-      premium: null,
-      label: "Filing fee $370 + $85 biometrics + $350 SEVIS fee",
+      standard: 470,
+      premium: 2075,
+      label:
+        "I-539 filing fee $470 paper / $420 online (biometrics included) + $350 SEVIS fee + optional premium processing $2,075",
     },
     processingTimeKey: "I-539-F1",
     priority: 4,
@@ -245,9 +247,10 @@ export const visaPaths: VisaPath[] = [
       { name: "Copy of I-94 arrival/departure record" },
     ],
     fees: {
-      standard: 460,
+      standard: 780,
       premium: 2965,
-      label: "Base filing fee ~$460 + optional premium processing $2,965",
+      label:
+        "Employer-paid: I-129 fee $780 + $600 Asylum Program Fee ($300 small employers) + optional premium processing $2,965",
     },
     processingTimeKey: "I-129-O1",
     priority: 5,
@@ -272,7 +275,7 @@ export const visaPaths: VisaPath[] = [
     premiumTimelineDays: null,
     filingDeadline: "before-i94",
     filingDeadlineNote:
-      "Depart before grace period ends. Voluntary departure preserves your ability to return on future US visas. Even one day of overstay can trigger a 3-year or 10-year reentry bar.",
+      "Depart before grace period ends. Even one day of overstay can trigger a 3-year or 10-year reentry bar. Departing can also change which rules apply to a later H-1B: a new employer petitioning for you while you are abroad could be subject to the $100,000 H-1B payment if it is reinstated.",
     documents: [
       { name: "Valid home country passport" },
       {
@@ -294,7 +297,7 @@ export const visaPaths: VisaPath[] = [
     priority: 6,
     riskLevel: "low",
     riskNote:
-      "Voluntary departure before grace period ends leaves a clean immigration record. Overstaying — even briefly — can result in 3-year or 10-year bars from re-entering the US.",
+      "Voluntary departure before grace period ends leaves a clean immigration record. Overstaying — even briefly — can result in 3-year or 10-year bars from re-entering the US. Re-entry on a new H-1B is less certain than it was: the $100,000 payment for workers entering from abroad was extended to Sept 2027 but is currently blocked by a court order, so it could return on appeal.",
     uscisUrl:
       "https://www.uscis.gov/working-in-the-united-states/information-for-employers-and-employees/options-for-nonimmigrant-workers-following-termination-of-employment",
     affiliateLinks: [

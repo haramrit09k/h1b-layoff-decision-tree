@@ -6,7 +6,7 @@
       "label": "Form I-129 (H-1B Transfer)",
       "standard": "3–6 months",
       "premium": "15 business days",
-      "premiumFee": 2805,
+      "premiumFee": 2965,
       "notes": "Work authorization begins on receipt notice filing date"
     },
     "I-539-H4": {
@@ -26,8 +26,8 @@
     "I-539-F1": {
       "label": "Form I-539 (F-1 COS)",
       "standard": "8–13 months",
-      "premium": "Not available",
-      "premiumFee": null,
+      "premium": "30 business days",
+      "premiumFee": 2075,
       "notes": "Must file within grace period; status maintained while pending"
     },
     "I-129-O1": {
